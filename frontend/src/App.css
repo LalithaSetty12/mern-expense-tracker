@@ -1,0 +1,581 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --paper: #F7F3EA;
+  --paper-card: #FFFDF8;
+  --ink: #1C1B18;
+  --ink-muted: #6B6558;
+  --forest: #0F3D2E;
+  --forest-dark: #0B2E22;
+  --gold: #C9A227;
+  --gold-soft: rgba(201, 162, 39, 0.15);
+  --danger: #B3261E;
+  --danger-soft: rgba(179, 38, 30, 0.08);
+  --success: #2F7A4D;
+  --border: rgba(15, 27, 24, 0.10);
+  --shadow: 0 4px 20px rgba(15, 61, 46, 0.10);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  color: var(--ink);
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(15, 61, 46, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 85% 80%, var(--gold-soft) 0%, transparent 45%),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 27px,
+      rgba(15, 61, 46, 0.03) 28px
+    );
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  font-family: 'Fraunces', serif;
+  color: var(--ink);
+}
+
+/* ---------- Auth pages ---------- */
+
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.auth-form {
+  background: var(--paper-card);
+  padding: 40px 36px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  width: 100%;
+  max-width: 360px;
+}
+
+.auth-form h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  background: #fff;
+  transition: border-color 0.15s ease;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: var(--forest);
+  box-shadow: 0 0 0 3px rgba(15, 61, 46, 0.12);
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 12px;
+  background: var(--forest);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 14px;
+  transition: background 0.15s ease;
+}
+
+.auth-form button:hover {
+  background: var(--forest-dark);
+}
+
+.auth-form p {
+  text-align: center;
+  font-size: 13px;
+  color: var(--ink-muted);
+}
+
+.auth-form a {
+  color: var(--forest);
+  font-weight: 600;
+}
+
+.error {
+  color: var(--danger);
+  background: var(--danger-soft);
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-bottom: 14px;
+  font-size: 13px;
+}
+
+/* ---------- Dashboard ---------- */
+
+.dashboard {
+  padding: 40px 24px 80px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.dashboard-header h1 {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.dashboard-header button {
+  padding: 10px 20px;
+  background: transparent;
+  color: var(--forest);
+  border: 1.5px solid var(--forest);
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.dashboard-header button:hover {
+  background: var(--forest);
+  color: white;
+}
+
+.dashboard h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  letter-spacing: 0.02em;
+}
+
+.section-spacer {
+  margin-top: 48px;
+  margin-bottom: 16px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+
+/* ---------- Forms (budget + expense) ---------- */
+
+.add-budget-form,
+.expense-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.add-budget-form input,
+.expense-form input,
+.expense-form select {
+  padding: 11px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  flex: 1;
+  min-width: 130px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  background: #fff;
+  transition: border-color 0.15s ease;
+}
+
+.add-budget-form input:focus,
+.expense-form input:focus,
+.expense-form select:focus {
+  outline: none;
+  border-color: var(--forest);
+  box-shadow: 0 0 0 3px rgba(15, 61, 46, 0.12);
+}
+
+.add-budget-form button {
+  padding: 11px 22px;
+  background: var(--forest);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.add-budget-form button:hover {
+  background: var(--forest-dark);
+}
+
+.expense-form button {
+  padding: 11px 24px;
+  background: var(--gold);
+  color: var(--ink);
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: filter 0.15s ease;
+}
+
+.expense-form button:hover {
+  filter: brightness(0.92);
+}
+
+/* ---------- Budget cards ---------- */
+
+.budget-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.budget-card {
+  background: var(--paper-card);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+}
+
+.budget-card.exceeded {
+  border-left: 3px solid var(--danger);
+}
+
+.budget-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.budget-category {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 18px;
+  border-bottom: 1.5px solid var(--gold-soft);
+  padding-bottom: 2px;
+}
+
+.budget-card.exceeded .budget-category {
+  border-bottom-color: rgba(179, 38, 30, 0.25);
+}
+
+.budget-warning {
+  color: var(--danger);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: var(--danger-soft);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.budget-bar-track {
+  background: rgba(15, 27, 24, 0.08);
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.budget-bar-fill {
+  height: 100%;
+  background: var(--forest);
+  transition: width 0.3s ease;
+}
+
+.budget-card.exceeded .budget-bar-fill {
+  background: var(--danger);
+}
+
+.budget-numbers {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--ink-muted);
+  margin-bottom: 6px;
+}
+
+.budget-remaining {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--forest);
+}
+
+.budget-card.exceeded .budget-remaining {
+  color: var(--danger);
+}
+
+/* ---------- Expense list ---------- */
+
+.expense-list {
+  background: var(--paper-card);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.expense-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.1s ease;
+}
+
+.expense-row:hover {
+  background: rgba(15, 61, 46, 0.02);
+}
+
+.expense-row:last-child {
+  border-bottom: none;
+}
+
+.expense-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.expense-title {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.expense-category {
+  font-size: 12px;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.expense-amount {
+  font-weight: 700;
+  font-size: 15px;
+  font-family: 'Fraunces', serif;
+}
+
+.expense-amount.expense {
+  color: var(--danger);
+}
+
+.expense-amount.income {
+  color: var(--success);
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: var(--ink-muted);
+  cursor: pointer;
+  font-size: 15px;
+  margin-left: 16px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  transition: all 0.15s ease;
+}
+
+.delete-btn:hover {
+  color: white;
+  background: var(--danger);
+}
+.alert-banner {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: var(--danger-soft);
+  border: 1px solid rgba(179, 38, 30, 0.25);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 32px;
+}
+
+.alert-banner-icon {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 50%;
+  background: var(--danger);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-family: 'Fraunces', serif;
+}
+
+.alert-banner-content strong {
+  display: block;
+  color: var(--danger);
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.alert-banner-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.alert-chip {
+  background: white;
+  border: 1px solid rgba(179, 38, 30, 0.2);
+  color: var(--ink);
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+.expense-form-wrapper {
+  margin-bottom: 28px;
+}
+
+.recurring-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 10px;
+  padding-left: 2px;
+}
+
+.recurring-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--ink-muted);
+  cursor: pointer;
+  user-select: none;
+}
+
+.recurring-checkbox input {
+  accent-color: var(--forest);
+  cursor: pointer;
+}
+
+.recurrence-select {
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 13px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.recurring-badge {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--forest);
+  background: rgba(15, 61, 46, 0.08);
+  padding: 2px 7px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.balance-summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 20px 0;
+  background: #fdf6e9;
+  border-left: 6px solid #2e7d32;
+}
+
+.balance-summary.negative {
+  border-left-color: #c62828;
+}
+
+.balance-summary-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.balance-label {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.balance-value {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.balance-value.income {
+  color: #2e7d32;
+}
+
+.balance-value.expense {
+  color: #c62828;
+}
+.app-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  background: #fdf6e9;
+  border-bottom: 2px solid #e0d3b0;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  padding-bottom: 4px;
+}
+
+.nav-link.active {
+  color: #2e7d32;
+  border-bottom: 2px solid #2e7d32;
+}
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
