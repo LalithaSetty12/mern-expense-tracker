@@ -2,20 +2,6 @@
 
 A web application built using the MERN stack to help users manage their expenses, set monthly budgets, and monitor their spending by category.
 
-## 📸 Screenshots
-
-### Registration Page
-![Registration Page](screenshots/register.png)
-
-### Login Page
-![Login Page](screenshots/login.png)
-
-### Expense Tracker Dashboard
-![Dashboard](screenshots/dashboard.png)
-
-### Budget Management
-![Budget Management](screenshots/budgets.png)
-
 ## ✨ Features
 
 - User registration and login
